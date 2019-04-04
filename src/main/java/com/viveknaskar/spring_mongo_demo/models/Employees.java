@@ -4,10 +4,10 @@ import org.bson.types.ObjectId;
 
 public class Employees {
 
-    public ObjectId _id;
-    public String name;
-    public String role;
-    public String salary;
+    private ObjectId _id;
+    private String name;
+    private String role;
+    private String salary;
 
     //Empty Constructor
     public  Employees(){}
