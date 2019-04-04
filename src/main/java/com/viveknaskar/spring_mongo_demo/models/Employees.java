@@ -1,17 +1,15 @@
 package com.viveknaskar.spring_mongo_demo.models;
 
 import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
 
 public class Employees {
 
-
     public ObjectId _id;
-
     public String name;
     public String role;
     public String salary;
 
+    //Empty Constructor
     public  Employees(){}
 
     public Employees(ObjectId _id, String name, String role, String salary) {
@@ -44,6 +42,5 @@ public class Employees {
     public void setSalary(String salary) {
         this.salary = salary;
     }
-
 
 }
