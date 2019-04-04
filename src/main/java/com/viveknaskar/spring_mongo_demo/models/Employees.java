@@ -10,13 +10,21 @@ public class Employees {
     private String salary;
 
     //Empty Constructor
-    public  Employees(){}
+    public Employees(){}
 
     public Employees(ObjectId _id, String name, String role, String salary) {
         this._id = _id;
         this.name = name;
         this.role = role;
         this.salary = salary;
+    }
+
+    public ObjectId get_id() {
+        return _id;
+    }
+
+    public void set_id(ObjectId _id) {
+        this._id = _id;
     }
 
     public String getName() {

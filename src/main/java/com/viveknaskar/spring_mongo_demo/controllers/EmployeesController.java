@@ -22,15 +22,20 @@ public class EmployeesController {
         return employeesRepository.findAll();
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Employees getEmployeeById(@PathVariable("id") ObjectId id) {
+        return employeesRepository.findBy_id(id);
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public void modifyEmployeeById(@PathVariable("id") ObjectId id, @RequestBody Employees employees) {
-        //employees.set_id(id);
+        employees.set_id(id);
         employeesRepository.save(employees);
     }
 
     @RequestMapping( method = RequestMethod.POST)
     public ResponseEntity createEmployee( @RequestBody Employees employees) {
-        //employees.set_id(ObjectId.get());
+        employees.set_id(ObjectId.get());
         employeesRepository.save(employees);
         return new ResponseEntity(employees, HttpStatus.OK);
     }
