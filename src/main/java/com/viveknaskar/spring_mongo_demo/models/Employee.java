@@ -1,30 +1,23 @@
 package com.viveknaskar.spring_mongo_demo.models;
 
-import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class Employees {
+@Document(collection = "Employee")
+public class Employee {
 
-    private ObjectId _id;
+    @Id
+    private String id;
     private String name;
     private String role;
     private String salary;
 
-    //Empty Constructor
-    public Employees(){}
-
-    public Employees(ObjectId _id, String name, String role, String salary) {
-        this._id = _id;
-        this.name = name;
-        this.role = role;
-        this.salary = salary;
+    public String getId() {
+        return id;
     }
 
-    public ObjectId get_id() {
-        return _id;
-    }
-
-    public void set_id(ObjectId _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -50,5 +43,4 @@ public class Employees {
     public void setSalary(String salary) {
         this.salary = salary;
     }
-
 }
